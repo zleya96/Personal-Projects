@@ -8,16 +8,6 @@ public class Dice {
     private int modifier;
     private int numberOfDice = 1;
 
-    public Dice(int numberOfSides, int modifier, int numberOfDice) {
-        this.numberOfSides = numberOfSides;
-        this.modifier = modifier;
-        this.numberOfDice = numberOfDice;
-    }
-
-    public Dice(int numberOfSides, int modifier) {
-        this.numberOfSides = numberOfSides;
-        this.modifier = modifier;
-    }
 
     public Dice(int numberOfSides) {
         this.numberOfSides = numberOfSides;
@@ -29,19 +19,19 @@ public class Dice {
         return roll;
     }
 
-    public int getNumberOfSides() {
-        return numberOfSides;
-    }
-
-    public int getModifier() {
-        return modifier;
-    }
-
     public void setModifier(int modifier) {
         this.modifier = modifier;
     }
 
     public void setNumberOfDice(int numberOfDice) {
         this.numberOfDice = numberOfDice;
+    }
+
+    public int getNumberOfSides() {
+        return numberOfSides;
+    }
+
+    public void setNumberOfSides(int numberOfSides) {
+        this.numberOfSides = numberOfSides;
     }
 }
