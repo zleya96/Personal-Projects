@@ -63,8 +63,7 @@ public class DiceRollerInterface {
             userDice = scanner.nextLine().toLowerCase();
             if (!diceMap.containsKey(userDice)) {
                 System.out.println();
-                System.out.println("Dice type not recognized. Try again.");
-                System.out.println("---------------!!!!-----------------");
+                System.out.println("Sorry, traveler. I only understand common tongue.");
                 System.out.println();
                 askTypeOfDice();
 
@@ -83,8 +82,7 @@ public class DiceRollerInterface {
             userModifier = Integer.parseInt(mod);
         } catch (NumberFormatException e) {
             System.out.println();
-            System.out.println("Invalid modifier. Try again.");
-            System.out.println("-----------!!!!-------------");
+            System.out.println("Forgive me, traveler. I don't speak Orc-ish.");
             System.out.println();
             askModifier();
         }
@@ -98,10 +96,15 @@ public class DiceRollerInterface {
         try {
             String number = scanner.nextLine();
             userNumberOfDice = Integer.parseInt(number);
+            if (userNumberOfDice == 0) {
+                System.out.println();
+                System.out.println("You must roll at least one die, traveler.");
+                System.out.println();
+                askNumberOfDice();
+            }
         } catch (NumberFormatException e) {
             System.out.println();
-            System.out.println("Unable to read amount of dice.");
-            System.out.println("------------!!!!--------------");
+            System.out.println("Hmmm...I don't understand.");
             System.out.println();
             askNumberOfDice();
         }
@@ -113,26 +116,31 @@ public class DiceRollerInterface {
         LocalTime morning = LocalTime.of(5, 0);
         LocalTime afternoon = LocalTime.of(12, 0);
         LocalTime evening = LocalTime.of(18, 0);
+        LocalTime midnight = LocalTime.of(0, 0);
 
-        System.out.println(currentTime);
+
         if (currentTime.isAfter(morning) && currentTime.isBefore(afternoon)) {
             System.out.println();
             System.out.println("-----------------------------");
             System.out.println("Good Morning, weary traveler.");
             System.out.println("-----------------------------");
             System.out.println();
-        }
-        if (currentTime.isAfter(afternoon) && currentTime.isBefore(evening)) {
+        } else if (currentTime.isAfter(afternoon) && currentTime.isBefore(evening)) {
             System.out.println();
             System.out.println("-------------------------------");
             System.out.println("Good Afternoon, weary traveler.");
             System.out.println("-------------------------------");
             System.out.println();
-        }
-        if (currentTime.isAfter(evening) && currentTime.isBefore(morning)) {
+        } else if (currentTime.isAfter(evening) || (currentTime.isAfter(midnight) && currentTime.isBefore(morning)))  {
             System.out.println();
             System.out.println("-----------------------------");
             System.out.println("Good Evening, weary traveler.");
+            System.out.println("-----------------------------");
+            System.out.println();
+        } else {
+            System.out.println();
+            System.out.println("-----------------------------");
+            System.out.println("Hello, weary traveler.");
             System.out.println("-----------------------------");
             System.out.println();
         }
