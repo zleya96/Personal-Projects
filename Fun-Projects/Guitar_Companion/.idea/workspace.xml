@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd531a71-2224-4586-a4e7-ea7a58494a41" name="Changes" comment="" />
+    <list default="true" id="148821c2-50dc-4a0d-821f-f07a9171a595" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +20,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Fd8q87RIpAnS5JRWCcuF6G4ubw" />
+  <component name="ProjectId" id="2GPNmlUlZF60Qy16THLvSkmdBDG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,18 +28,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../zack-leya-student-code/module-2/12_Consuming_RESTful_APIs_Part_2/exercise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../zack-leya-student-code/module-2/13_Server_Side_APIs_Part_1/exercise" />
   </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ZackLeya.DiceRoller.Application" />
-      <module name="DnDDiceRoller" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ZackLeya.DiceRoller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="GuitarCompanion" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -53,22 +47,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fd531a71-2224-4586-a4e7-ea7a58494a41" name="Changes" comment="" />
-      <created>1664810789909</created>
+      <changelist id="148821c2-50dc-4a0d-821f-f07a9171a595" name="Changes" comment="" />
+      <created>1666286421735</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664810789909</updated>
+      <updated>1666286421735</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

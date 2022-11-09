@@ -13,9 +13,17 @@ public class Dice {
         this.numberOfSides = numberOfSides;
     }
 
-    public int rollDice() {
+    public int[] rollDice() {
+
+        //TODO: TEST THIS --> also change so that nat 20 message is without modifier
         Random r = new Random();
-        int roll = (1 + r.nextInt(numberOfSides) * numberOfDice) + modifier;
+        int[] roll = new int[2];
+
+        for (int i = 1; i <= numberOfDice; i++ ) {
+            roll[0] += (1 + r.nextInt(numberOfSides));
+        }
+
+        roll[1] = roll[0] + modifier;
         return roll;
     }
 

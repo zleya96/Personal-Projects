@@ -39,16 +39,19 @@ public class DiceRollerInterface {
         if (diceMap.containsKey(userDice)) {
             diceMap.get(userDice).setModifier(userModifier);
             diceMap.get(userDice).setNumberOfDice(userNumberOfDice);
-            int rollResult = diceMap.get(userDice).rollDice();
+            int[] rollResult = diceMap.get(userDice).rollDice();
             System.out.println();
 
-            if (userDice.equals("d20") && rollResult == 20 && userModifier == 0 && userNumberOfDice == 1) {
-                System.out.println("Huzzah! You rolled a natural " + rollResult + "! The gods are in your favor.");
-            } else if (userDice.equals("d20") && rollResult == 1 && userModifier == 0 && userNumberOfDice == 1) {
-                System.out.println("I'm sorry, traveler...you rolled a natural " + rollResult + ". Perhaps you are cursed.");
+            if (userDice.equals("d20") && rollResult[0] == 20 && userNumberOfDice == 1) {
+                System.out.println("Huzzah! You rolled a natural " + rollResult[0] + "! The gods are in your favor.");
+                System.out.println("That's a " + rollResult[1] + " with modifier.");
+            } else if (userDice.equals("d20") && rollResult[0] == 1 && userNumberOfDice == 1) {
+                System.out.println("I'm sorry, traveler...you rolled a natural " + rollResult[0] + ". Perhaps you are cursed.");
+                System.out.println("That's a " + rollResult[1] + " with modifier.");
+
             } else {
                 System.out.println("*********************************");
-                System.out.println("         You rolled:  " + rollResult + "        ");
+                System.out.println("         You rolled:  " + rollResult[1] + "        ");
                 System.out.println("*********************************");
             }
 
@@ -57,6 +60,7 @@ public class DiceRollerInterface {
 
     public String askTypeOfDice() {
 
+        //TODO: TEST THIS
         do {
             Scanner scanner = new Scanner(System.in);
             System.out.print("What kind of die are you rolling? ");
@@ -74,6 +78,8 @@ public class DiceRollerInterface {
     }
 
     public int askModifier() {
+
+        //TODO: TEST THIS
         Scanner scanner = new Scanner(System.in);
         System.out.print("What is the modifier?: ");
 
@@ -90,6 +96,8 @@ public class DiceRollerInterface {
     }
 
     public int askNumberOfDice() {
+
+        //TODO: TEST THIS
         Scanner scanner = new Scanner(System.in);
         System.out.print("How many dice are you rolling?: ");
 
@@ -113,35 +121,36 @@ public class DiceRollerInterface {
 
     public void timeGreeting() {
         LocalTime currentTime = LocalTime.now();
-        LocalTime morning = LocalTime.of(5, 0);
-        LocalTime afternoon = LocalTime.of(12, 0);
-        LocalTime evening = LocalTime.of(18, 0);
-        LocalTime midnight = LocalTime.of(0, 0);
+
+        LocalTime morning = LocalTime.of(5, 0, 0, 0);
+        LocalTime afternoon = LocalTime.of(12, 0, 0, 0);
+        LocalTime evening = LocalTime.of(18, 0, 0, 0);
+        LocalTime midnight = LocalTime.of(0, 0, 0, 0);
 
 
         if (currentTime.isAfter(morning) && currentTime.isBefore(afternoon)) {
             System.out.println();
             System.out.println("-----------------------------");
-            System.out.println("Good Morning, weary traveler.");
+            System.out.println("Good morning, weary traveler.");
             System.out.println("-----------------------------");
             System.out.println();
         } else if (currentTime.isAfter(afternoon) && currentTime.isBefore(evening)) {
             System.out.println();
             System.out.println("-------------------------------");
-            System.out.println("Good Afternoon, weary traveler.");
+            System.out.println("Good afternoon, weary traveler.");
             System.out.println("-------------------------------");
             System.out.println();
         } else if (currentTime.isAfter(evening) || (currentTime.isAfter(midnight) && currentTime.isBefore(morning)))  {
             System.out.println();
             System.out.println("-----------------------------");
-            System.out.println("Good Evening, weary traveler.");
+            System.out.println("Good evening, weary traveler.");
             System.out.println("-----------------------------");
             System.out.println();
         } else {
             System.out.println();
-            System.out.println("-----------------------------");
+            System.out.println("----------------------");
             System.out.println("Hello, weary traveler.");
-            System.out.println("-----------------------------");
+            System.out.println("----------------------");
             System.out.println();
         }
     }
@@ -155,6 +164,7 @@ public class DiceRollerInterface {
             System.out.println();
             System.out.print("Would you like to roll again? (Y/N): ");
 
+
             String input = scanner.nextLine().toLowerCase();
             isValid = input.equals("y") || input.equals("n");
 
@@ -163,7 +173,7 @@ public class DiceRollerInterface {
             } else if (input.equals("n")) {
                 System.exit(0);
             } else {
-                System.out.println("Answer not recognized.");
+                System.out.println("Sorry, traveler. I don't understand.");
                 rollAgainOption();
             }
         } while (isValid);
